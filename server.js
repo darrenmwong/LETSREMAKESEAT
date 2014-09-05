@@ -37,7 +37,7 @@ app.get('*', function(req, res) {
 // routes ===============================
 // api
 
-app.get('/api/home', function(req, res) {
+app.get('/api/todos', function(req, res) {
 
   //use mongoose to get all todos in the mongo database
   Todo.find(function(err, todos) {
