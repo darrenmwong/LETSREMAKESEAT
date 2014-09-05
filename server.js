@@ -26,3 +26,26 @@ console.log("App listening on port 3000");
 var Todo = mongoose.model('Todo' , {
   text : String
 });
+
+//application
+app.get('*', function(req, res) {
+    res.sendfile('./public/index.html'); //load the single view file (angular)
+});
+
+
+
+// routes ===============================
+// api
+
+app.get('/api/home', function(req, res) {
+
+  //use mongoose to get all todos in the mongo database
+  Todo.find(function(err, todos) {
+
+    //if there is an error retrieving, send error.
+    if (err)
+      res.send(err)
+
+    res.json(todos); //return all todos in JSON format
+  });
+});
