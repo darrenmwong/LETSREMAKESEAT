@@ -20,3 +20,9 @@ app.use(methodOverride());
   // listen (start app with node server.js) ======================================
 app.listen(3000);
 console.log("App listening on port 3000");
+
+// define model ==================
+
+var Todo = mongoose.model('Todo' , {
+  text : String
+});
