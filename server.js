@@ -23,9 +23,16 @@ console.log("App listening on port 3000");
 
 // define model ==================
 
-var Todo = mongoose.model('Todo' , {
-  text : String
+var User = mongoose.model('User' , {
+  //Defining Schema
 });
+
+
+
+var Reservation = mongoose.model('Reservation', {
+  //Define Schema
+});
+
 
 //application
 app.get('*', function(req, res) {
