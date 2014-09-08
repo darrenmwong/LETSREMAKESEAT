@@ -2,6 +2,7 @@
 var express  = require('express');
 var app      = express();                 // create our app w/ express
 var mongoose = require('mongoose');           // mongoose for mongodb
+var model = require('schema.js') // require file schema.js to define models
 var morgan = require('morgan');       // log requests to the console (express4)
 var bodyParser = require('body-parser');  // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
@@ -20,19 +21,6 @@ app.use(methodOverride());
   // listen (start app with node server.js) ======================================
 app.listen(3000);
 console.log("App listening on port 3000");
-
-// define model ==================
-
-var User = mongoose.model('User' , {
-  //Defining Schema
-});
-
-
-
-var Reservation = mongoose.model('Reservation', {
-  //Define Schema
-});
-
 
 //application
 app.get('*', function(req, res) {
